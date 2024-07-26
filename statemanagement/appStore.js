@@ -1,5 +1,6 @@
 import {configureStore} from '@reduxjs/toolkit'
 import { appReducer } from './appReducer';
+import logger from 'redux-logger';
 
 
 
@@ -8,5 +9,8 @@ import { appReducer } from './appReducer';
         appReducer
         
 
+    },
+    middleware:()=>{
+        return[logger]
     }
 });

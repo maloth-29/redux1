@@ -1,14 +1,16 @@
 "use client"
 import React, { useRef, useState } from 'react'
+import{useDispatch} from 'react-redux'
 
 export const B = () => {
     const [loc,Setloc]=useState()
+    const dispatch=useDispatch()
     const handeleChange=(eve)=>{
          Setloc(eve.target.value)
 
     }
     const handeleClick=()=>{
-        alert(loc)
+        dispatch({type:"LOC_UPDATE",payload:loc})
 
     }
   return (
